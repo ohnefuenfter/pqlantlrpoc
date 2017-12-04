@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D75AF75A-C683-4874-8A0D-FED6A552E290}</ProjectGuid>
+    <ProjectGuid>{742D05ED-2B17-4FDE-A449-AE87F87A841E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>antlIntro</RootNamespace>
-    <AssemblyName>antlIntro</AssemblyName>
+    <RootNamespace>PqlAntlr</RootNamespace>
+    <AssemblyName>PqlAntlr</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -50,22 +50,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PQL.g4.lexer.cs">
+      <DependentUpon>PQL.g4</DependentUpon>
+    </Compile>
+    <Compile Include="PQL.g4.parser.cs">
+      <DependentUpon>PQL.g4</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Speak.g4.lexer.cs">
-      <DependentUpon>Speak.g4</DependentUpon>
-    </Compile>
-    <Compile Include="Speak.g4.parser.cs">
-      <DependentUpon>Speak.g4</DependentUpon>
-    </Compile>
-    <Compile Include="SpeakVisitor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <Antlr4 Include="Speak.g4">
+    <Antlr4 Include="PQL.g4">
       <Generator>MSBuild:Compile</Generator>
-      <CustomToolNamespace>antlIntro</CustomToolNamespace>
+      <CustomToolNamespace>PqlAntlr</CustomToolNamespace>
     </Antlr4>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
